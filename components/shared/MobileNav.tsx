@@ -18,7 +18,7 @@ const MobileNav = () => {
         <Image 
           src="/assets/images/logo.png"
           alt='logo'
-          width={180}
+          width={140}
           height={28}
         />
       </Link>
