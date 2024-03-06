@@ -2,6 +2,7 @@ import mongoose, { Mongoose } from "mongoose";
 
 const MONGODB_URL = process.env.MONGODB_URL;
 
+// Create an interface for typescript understaning
 interface MongooseConnection {
   conn: Mongoose | null;
   promise: Promise<Mongoose> | null;
@@ -10,6 +11,7 @@ interface MongooseConnection {
 // (global as any).mongoose: It attempts to access the mongoose property of the global object. The global object is a global scope object in Node.js that contains global variables. The (global as any) syntax is used to explicitly cast global to any type, allowing access to properties that might not be defined in the TypeScript types.
 let cached: MongooseConnection = (global as any).mongoose;
 
+// If there is no cache variable assigned before, assign the properties of cahced to null and intialise the variable
 if (!cached) {
   cached = (global as any).mongoose = {
     conn: null,
@@ -17,6 +19,7 @@ if (!cached) {
   };
 }
 
+// Connecting to DB using a workaround for cached variable
 export const connectToDatabase = async () => {
   // if connection already exists, then use that
   if (cached.conn) return cached.conn;
