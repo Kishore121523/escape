@@ -29,7 +29,7 @@ export const connectToDatabase = async () => {
   // If not then create a connection
   cached.promise =
     cached.promise ||
-    mongoose.connect(MONGODB_URL, { dbName: "Escape", bufferCommands: false });
+    mongoose.connect(MONGODB_URL, { dbName: "escape", bufferCommands: false });
 
   cached.conn = await cached.promise;
 
