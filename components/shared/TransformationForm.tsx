@@ -56,7 +56,6 @@ const TransformationForm = ({action, data = null, userId, type, creditBalance}:T
     defaultValues: initialValues,
   })
  
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
   }
