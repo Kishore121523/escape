@@ -55,11 +55,13 @@ const TransformationForm = ({action, data = null, userId, type, creditBalance}:T
     resolver: zodResolver(formSchema),
     defaultValues: initialValues,
   })
- 
+  
+  // handler for button click
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values)
   }
 
+  // handler for select input
   const onSelectFieldHandler = (value:string, onChangeField: (value:string)=>void) => {
 
   }
