@@ -42,6 +42,7 @@ const TransformationForm = ({action, data = null, userId, type, creditBalance}:T
   const [image, setImage] = useState(data);
   const [newTransforamtion, setNewTransforamtion] = useState<Transformations | null>(null);
 
+  // Set initialvalues to defaultValues if its it first time else update the value
   const initialValues = data && action === "Update" ? {
     title: data?.title,
     aspectRatio: data?.aspectRatio,
