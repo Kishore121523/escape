@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation'
 import React from 'react'
 import { Button } from '../ui/button'
 
+// Make sure to give the route for the links as the same path as created in the directory, the next JS will automatically route to that page accordingly
 const Sidebar = () => {
   const pathname = usePathname();
 
